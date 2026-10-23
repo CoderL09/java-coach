@@ -1,0 +1,1 @@
+CREATE TABLE runtime_traces(id CHAR(36) PRIMARY KEY,user_id BIGINT NOT NULL,language VARCHAR(16) NOT NULL,source MEDIUMTEXT NOT NULL,trace MEDIUMTEXT NOT NULL,created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,FOREIGN KEY(user_id) REFERENCES users(id),INDEX idx_runtime_user(user_id,created_at));

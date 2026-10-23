@@ -1,0 +1,389 @@
+.runtime-workspace {
+  min-height: 760px;
+  grid-template-columns: minmax(350px, 1fr) minmax(490px, 1.15fr);
+}
+.runtime-visual {
+  min-height: 760px;
+}
+.runtime-intro {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 23px;
+  padding: 45px;
+  text-align: center;
+  color: var(--tone-78b8bc, #78b8bc);
+}
+.runtime-intro h2 {
+  font-size: 22px;
+  color: var(--tone-c9dbe9, #c9dbe9);
+}
+.runtime-intro p {
+  font-size: 12px;
+}
+.runtime-intro > span {
+  font-size: 10px;
+  color: var(--tone-657f99, #657f99);
+}
+.runtime-position {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 13px;
+  border-bottom: 1px solid var(--tone-2d4057, #2d4057);
+  padding: 17px 20px;
+  font-size: 11px;
+  background: var(--tone-162333, #162333);
+}
+.runtime-position code {
+  color: var(--tone-c0d5e8, #c0d5e8);
+}
+.runtime-position small {
+  font-size: 9px;
+  color: var(--tone-748ca7, #748ca7);
+  margin-left: auto;
+}
+.runtime-stack-layout {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  flex: 1;
+  min-height: 300px;
+}
+.runtime-stack-list {
+  border-right: 1px solid var(--tone-2c3c51, #2c3c51);
+  background: var(--tone-111c2a, #111c2a);
+  padding: 15px 10px;
+  overflow: auto;
+  max-height: 430px;
+}
+.runtime-stack-list > span {
+  font-size: 9px;
+  color: var(--tone-708aa5, #708aa5);
+  display: block;
+  padding: 0 4px 15px;
+}
+.runtime-stack-list > button {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 9px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 11px 9px;
+  text-align: left;
+  margin-bottom: 7px;
+}
+.runtime-stack-list > button.active {
+  background: var(--tone-20383f, #20383f);
+  border-color: var(--tone-3c6064, #3c6064);
+}
+.runtime-stack-list strong {
+  font:
+    10px Consolas,
+    monospace;
+  overflow-wrap: anywhere;
+  color: var(--tone-c3d9e7, #c3d9e7);
+}
+.runtime-stack-list small {
+  font-size: 9px;
+  color: var(--tone-819bb3, #819bb3);
+}
+.runtime-locals {
+  padding: 19px;
+  min-width: 0;
+  overflow: auto;
+}
+.runtime-locals h3 {
+  font:
+    12px Consolas,
+    monospace;
+  color: var(--tone-afcec9, #afcec9);
+  margin-bottom: 12px;
+  overflow-wrap: anywhere;
+}
+.runtime-locals > p {
+  font-size: 10px;
+  color: var(--tone-708aa5, #708aa5);
+  margin-bottom: 15px;
+}
+.runtime-locals table,
+.runtime-object-inspector table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10px;
+  text-align: left;
+  table-layout: fixed;
+}
+.runtime-locals th,
+.runtime-locals td,
+.runtime-object-inspector th,
+.runtime-object-inspector td {
+  padding: 11px 6px;
+  border-bottom: 1px solid var(--tone-293b52, #293b52);
+  font-weight: 400;
+  overflow-wrap: anywhere;
+  font-family: Consolas, monospace;
+}
+.runtime-locals thead th {
+  font-family: inherit;
+  font-size: 9px;
+  color: var(--tone-7891ac, #7891ac);
+}
+.runtime-locals tbody th {
+  color: var(--tone-b7a3e0, #b7a3e0);
+}
+.runtime-locals td {
+  color: var(--tone-a0b6d0, #a0b6d0);
+}
+.runtime-locals td:last-child {
+  color: var(--tone-9cd4c9, #9cd4c9);
+}
+.runtime-locals tr.changed {
+  background: var(--tone-3a3124, #3a3124);
+}
+.runtime-locals tr.changed td:last-child {
+  color: var(--tone-e8c181, #e8c181);
+}
+.runtime-boundary {
+  font-size: 9px !important;
+  color: var(--tone-6b859f, #6b859f) !important;
+  line-height: 1.9;
+  margin: 15px 0 0 !important;
+}
+.runtime-output {
+  padding: 19px 21px;
+  background: var(--tone-101925, #101925);
+  border-top: 1px solid var(--tone-2a3d54, #2a3d54);
+}
+.runtime-output h3 {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 10px;
+  color: var(--tone-829bb5, #829bb5);
+}
+.runtime-output pre {
+  font-size: 11px;
+  color: var(--tone-a5d5c6, #a5d5c6);
+  max-height: 160px;
+  overflow: auto;
+  margin: 10px 0 0;
+}
+.runtime-visual .timeline-controls > input {
+  width: 100%;
+  height: 4px;
+}
+.runtime-exception {
+  padding: 13px 20px;
+  font-size: 11px;
+  color: var(--tone-e5b285, #e5b285);
+  background: var(--tone-35291f, #35291f);
+  border-top: 1px solid var(--tone-674b32, #674b32);
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+.runtime-scope {
+  padding: 20px 5px 25px;
+}
+.runtime-scope strong {
+  font-size: 10px;
+  color: var(--tone-8c9fb6, #8c9fb6);
+  font-weight: 400;
+}
+.runtime-scope p {
+  font-size: 10px;
+  color: var(--tone-6f87a0, #6f87a0);
+  line-height: 1.9;
+  margin-top: 8px;
+}
+.runtime-heap {
+  padding: 15px;
+  min-width: 0;
+  flex: 1;
+}
+.runtime-object-map {
+  max-height: 380px;
+  overflow: auto;
+  scrollbar-width: thin;
+}
+.runtime-object-map svg {
+  display: block;
+  width: 100%;
+}
+.runtime-object-map g[role="button"] {
+  cursor: pointer;
+}
+.runtime-object-map g[role="button"]:focus-visible {
+  outline: none;
+}
+.runtime-object-map g[role="button"]:focus-visible rect {
+  stroke: var(--tone-e9bb75, #e9bb75);
+  stroke-width: 2;
+}
+.runtime-object-inspector {
+  background: var(--tone-142333, #142333);
+  border: 1px solid var(--tone-2e455c, #2e455c);
+  border-radius: 7px;
+  padding: 14px;
+  margin-top: 12px;
+}
+.runtime-object-inspector > div {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.runtime-object-inspector strong {
+  font:
+    11px Consolas,
+    monospace;
+  color: var(--tone-92d2c8, #92d2c8);
+}
+.runtime-object-inspector code {
+  font-size: 10px;
+  color: var(--tone-7f98b2, #7f98b2);
+}
+.runtime-object-inspector > div > span {
+  font-size: 9px;
+  color: var(--tone-6d879f, #6d879f);
+  margin-left: auto;
+}
+.runtime-object-inspector table th {
+  width: 45%;
+  color: var(--tone-b6a1df, #b6a1df);
+}
+.runtime-object-inspector table td {
+  color: var(--tone-bdd8df, #bdd8df);
+}
+.runtime-object-inspector p {
+  font-size: 10px;
+  margin-top: 10px;
+}
+.runtime-empty {
+  font-size: 12px;
+  color: var(--tone-7e96b1, #7e96b1);
+  text-align: center;
+  padding: 50px 20px;
+}
+.runtime-statics {
+  padding: 15px 20px;
+  font-size: 10px;
+  border-top: 1px solid var(--tone-2c4057, #2c4057);
+}
+.runtime-statics summary {
+  cursor: pointer;
+  color: var(--tone-809ab4, #809ab4);
+}
+.runtime-statics > div {
+  display: flex;
+  justify-content: space-between;
+  padding: 9px 0;
+  gap: 12px;
+  color: var(--tone-afd1cc, #afd1cc);
+}
+.model-badge .real-dot {
+  background: var(--tone-7fcabc, #7fcabc);
+}
+@media (max-width: 1100px) {
+  .runtime-workspace {
+    grid-template-columns: 1fr;
+  }
+  .runtime-workspace .editor-panel {
+    height: 510px;
+    border-right: 0;
+  }
+  .runtime-visual {
+    min-height: 650px;
+  }
+  .runtime-stack-layout {
+    grid-template-columns: 190px 1fr;
+  }
+  .runtime-object-map svg {
+    max-width: 780px;
+    margin: auto;
+  }
+}
+@media (max-width: 650px) {
+  .runtime-page .lab-title h1 {
+    font-size: 18px;
+  }
+  .runtime-page .lab-heading > .button {
+    font-size: 9px;
+    padding: 8px;
+  }
+  .runtime-page .experiment-toolbar {
+    justify-content: flex-start;
+  }
+  .runtime-page .experiment-toolbar > .model-badge {
+    margin-left: 0;
+  }
+  .runtime-page .inline-field select {
+    max-width: 230px;
+  }
+  .runtime-workspace .editor-panel {
+    height: 440px;
+  }
+  .runtime-visual {
+    min-height: 550px;
+  }
+  .runtime-stack-layout {
+    grid-template-columns: 120px minmax(0, 1fr);
+  }
+  .runtime-stack-list {
+    padding: 12px 6px;
+  }
+  .runtime-stack-list > span {
+    font-size: 8px;
+    line-height: 1.8;
+  }
+  .runtime-stack-list strong {
+    font-size: 9px;
+  }
+  .runtime-stack-list small {
+    font-size: 8px;
+  }
+  .runtime-locals {
+    padding: 14px 9px;
+  }
+  .runtime-locals th,
+  .runtime-locals td {
+    font-size: 9px;
+    padding: 10px 4px;
+  }
+  .runtime-position {
+    padding: 14px;
+    gap: 9px;
+    font-size: 10px;
+  }
+  .runtime-position small {
+    margin-left: 0;
+  }
+  .runtime-heap {
+    padding: 10px;
+  }
+  .runtime-object-inspector {
+    padding: 12px;
+  }
+  .runtime-object-map svg {
+    min-width: 530px;
+  }
+  .runtime-scope p {
+    font-size: 9px;
+  }
+  .lab-heading {
+    flex-wrap: wrap;
+    height: auto;
+    min-height: 86px;
+    padding: 18px 0;
+    row-gap: 14px;
+  }
+  .lab-title-actions {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+  }
+}

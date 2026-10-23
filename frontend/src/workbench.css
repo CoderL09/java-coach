@@ -1,0 +1,559 @@
+.course-state>.memory-map-shell{min-width:0;overflow-x:auto}.course-state .memory-world{min-width:420px}
+.workbench-page {
+  display: flex;
+  flex-direction: column;
+  height: calc(100dvh - 65px);
+  min-height: 550px;
+  background: var(--bg);
+}
+.workbench-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 22px;
+  min-height: 66px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel);
+}
+.workbench-toolbar select {
+  min-width: 115px;
+  font-size: 12px;
+}
+.workbench-transport {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.workbench-transport .button {
+  padding: 9px 15px;
+  font-size: 12px;
+  margin-right: 6px;
+}
+.workbench-transport .icon-button {
+  min-width: 32px;
+  height: 32px;
+  padding: 6px;
+}
+.workbench-state {
+  font-size: 11px;
+  color: var(--muted);
+  margin-left: auto;
+}
+.console-toggle {
+  font-size: 11px;
+  gap: 7px;
+}
+.workbench-columns {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.9fr) minmax(450px, 1.25fr);
+  min-height: 0;
+  flex: 1;
+}
+.workbench-code {
+  min-width: 0;
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+}
+.workbench-code .code-editor {
+  flex: 1;
+  height: auto;
+  min-height: 0;
+}
+.workbench-panel-label {
+  height: 39px;
+  flex-shrink: 0;
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 10px;
+}
+.workbench-memory {
+  min-width: 0;
+  overflow: auto;
+  scrollbar-gutter: stable;
+}
+.workbench-memory > .workbench-panel-label {
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 3;
+}
+.memory-map-shell {
+  padding: 22px 18px 10px;
+  min-width: 430px;
+}
+.memory-world {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(150px, 0.95fr) minmax(210px, 1.3fr);
+  gap: 20px 38px;
+  align-items: start;
+  padding: 0 7px 12px 0;
+}
+.memory-region {
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  min-width: 0;
+  background: var(--panel);
+}
+.memory-region > header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 16px;
+}
+.memory-region h2 {
+  font-size: 12px;
+  font-weight: 550;
+}
+.memory-region > header > small {
+  width: 100%;
+  padding-left: 13px;
+  color: var(--muted);
+  font-size: 9px;
+}
+.region-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--violet);
+}
+.stack-region {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  min-height: 490px;
+  border-top: 2px solid var(--violet);
+}
+.heap-region {
+  grid-column: 2;
+  grid-row: 1;
+  min-height: 290px;
+  border-top: 2px solid var(--cyan);
+}
+.heap-region .region-dot {
+  background: var(--cyan);
+}
+.class-region {
+  grid-column: 2;
+  grid-row: 2;
+  min-height: 170px;
+  border-top: 2px solid var(--amber);
+}
+.class-region .region-dot {
+  background: var(--amber);
+}
+.region-empty,
+.region-footnote {
+  font-size: 10px;
+  line-height: 1.9;
+  color: var(--muted);
+}
+.region-empty {
+  padding: 9px 0;
+}
+.region-footnote {
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+.declaration-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 10px;
+}
+.declaration-row > span:first-child {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+}
+.declaration-row small {
+  font-size: 9px;
+  color: var(--muted);
+}
+.declaration-row code {
+  color: var(--violet);
+  overflow-wrap: anywhere;
+}
+.declaration-row > span:last-child {
+  font-size: 9px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.call-frame {
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  margin-bottom: 13px;
+  overflow: hidden;
+}
+.call-frame.current {
+  border-color: var(--amber);
+}
+.call-frame > header {
+  background: var(--bg);
+  padding: 8px;
+  display: grid;
+  gap: 4px;
+}
+.call-frame > header strong {
+  font:
+    11px Consolas,
+    monospace;
+  overflow-wrap: anywhere;
+  color: var(--violet);
+}
+.call-frame > header span {
+  font-size: 9px;
+  color: var(--muted);
+}
+.memory-local,
+.object-fields > button {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 7px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  min-width: 0;
+}
+.memory-local:last-child,
+.object-fields > button:last-child {
+  border-bottom: 0;
+}
+.memory-local > span,
+.object-fields > button > span {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+.memory-local small,
+.object-fields small {
+  font-size: 8px;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+.memory-local code,
+.object-fields code {
+  font-size: 11px;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.5;
+}
+.memory-local > code {
+  color: var(--violet);
+  text-align: right;
+  max-width: 55%;
+}
+.memory-local.changed,
+.object-fields > button.changed {
+  background: color-mix(in srgb, var(--amber) 13%, transparent);
+  box-shadow: inset 2px 0 var(--amber);
+}
+.memory-object {
+  border: 1px solid var(--cyan);
+  border-radius: 7px;
+  margin: 0 0 18px;
+  position: relative;
+  min-width: 0;
+}
+.memory-object > header {
+  border-bottom: 1px solid var(--line);
+  padding: 9px;
+  background: var(--bg);
+  border-radius: 6px 6px 0 0;
+}
+.memory-object > header button {
+  display: grid;
+  gap: 6px;
+  text-align: left;
+  max-width: 100%;
+  padding: 0;
+}
+.memory-object > header code {
+  font-size: 10px;
+  color: var(--cyan);
+}
+.memory-object > header strong {
+  font-size: 11px;
+  overflow-wrap: anywhere;
+  font-weight: 500;
+}
+.memory-object > header small {
+  display: block;
+  font-size: 9px;
+  color: var(--muted);
+  margin-top: 5px;
+}
+.object-fields > button > code {
+  color: var(--cyan);
+  text-align: right;
+  max-width: 55%;
+}
+.object-limit {
+  padding: 8px;
+  font-size: 9px;
+  line-height: 1.6;
+  color: var(--amber);
+}
+.class-declaration {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  gap: 4px;
+}
+.class-declaration code {
+  color: var(--amber);
+  font-size: 11px;
+}
+.class-declaration span {
+  font-size: 9px;
+  color: var(--muted);
+}
+.class-metadata {
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 10px;
+}
+.class-metadata summary {
+  cursor: pointer;
+  font-size: 10px;
+  color: var(--amber);
+  overflow-wrap: anywhere;
+}
+.class-metadata summary > span {
+  float: right;
+  color: var(--muted);
+  font-size: 9px;
+}
+.class-members {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.class-members > span {
+  width: 100%;
+  font-size: 10px;
+  overflow-wrap: anywhere;
+}
+.class-members small {
+  color: var(--muted);
+  font-size: 9px;
+}
+.method-chip {
+  font-size: 9px;
+  padding: 4px 6px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: var(--amber);
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.class-metadata > small {
+  font-size: 9px;
+  color: var(--muted);
+}
+.static-values h3 {
+  font-size: 10px;
+  color: var(--muted);
+  margin: 12px 0;
+}
+.static-values button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 7px 0;
+  font-size: 10px;
+}
+.static-values code {
+  overflow-wrap: anywhere;
+}
+.memory-connections {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 2;
+  overflow: visible;
+}
+.memory-connections > path {
+  stroke: var(--cyan);
+  stroke-width: 1.4;
+  opacity: 0.8;
+}
+.memory-connections > path.field {
+  stroke-dasharray: 4 3;
+}
+.memory-selection {
+  font-size: 11px;
+  border-left: 2px solid var(--cyan);
+  background: var(--panel);
+  padding: 10px 12px;
+  margin-top: 10px;
+  overflow-wrap: anywhere;
+  position: sticky;
+  bottom: 0;
+  z-index: 4;
+}
+.memory-selection button {
+  float: right;
+  padding: 0 5px;
+}
+.memory-map-caption {
+  font-size: 9px;
+  line-height: 1.9;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  padding: 12px 0;
+}
+.workbench-capability {
+  margin: 0 20px 18px;
+  font-size: 10px;
+  line-height: 1.9;
+  color: var(--amber);
+}
+.workbench-console {
+  max-height: 240px;
+  overflow: auto;
+  flex-shrink: 0;
+  border-top: 1px solid var(--line);
+  padding: 14px 22px;
+  background: var(--panel);
+}
+.workbench-console > header {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.workbench-console h2 {
+  font-size: 12px;
+}
+.workbench-console > header > span {
+  font-size: 10px;
+  color: var(--muted);
+}
+.workbench-console > header > button {
+  margin-left: auto;
+}
+.workbench-console pre {
+  font-size: 12px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+.workbench-console .error-message {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+@media (min-width: 1700px) {
+  .memory-map-shell {
+    padding: 28px;
+  }
+  .memory-world {
+    gap: 24px 55px;
+  }
+  .memory-region {
+    padding: 16px;
+  }
+  .memory-local code,
+  .object-fields code {
+    font-size: 12px;
+  }
+}
+@media (max-width: 1000px) {
+  .workbench-columns {
+    grid-template-columns: minmax(240px, 0.85fr) minmax(390px, 1.1fr);
+  }
+  .workbench-toolbar {
+    gap: 10px;
+    padding: 10px 15px;
+  }
+  .workbench-state {
+    font-size: 9px;
+  }
+  .memory-map-shell {
+    padding: 16px 12px;
+    min-width: 400px;
+  }
+  .memory-world {
+    gap: 15px 28px;
+  }
+  .memory-region {
+    padding: 9px;
+  }
+}
+@media (max-width: 760px) {
+  .workbench-page {
+    height: auto;
+    min-height: calc(100dvh - 65px);
+  }
+  .workbench-toolbar {
+    flex-wrap: wrap;
+    gap: 9px;
+  }
+  .workbench-toolbar select {
+    min-width: 92px;
+    font-size: 11px;
+  }
+  .workbench-transport {
+    gap: 0;
+  }
+  .workbench-transport .button {
+    padding: 8px 10px;
+    margin: 0;
+  }
+  .workbench-transport .icon-button {
+    min-width: 28px;
+    padding: 5px;
+  }
+  .workbench-state {
+    order: 3;
+    margin-left: 0;
+    flex: 1;
+  }
+  .console-toggle {
+    order: 4;
+    margin-left: auto;
+  }
+  .workbench-columns {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .workbench-code {
+    height: 410px;
+    flex-shrink: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .workbench-memory {
+    max-height: 750px;
+    overflow: auto;
+  }
+  .workbench-console {
+    max-height: 280px;
+  }
+  .workbench-memory > .workbench-panel-label {
+    position: static;
+  }
+  .workbench-panel-label {
+    font-size: 9px;
+    padding: 10px 12px;
+  }
+  .workbench-console > header > span {
+    display: none;
+  }
+}

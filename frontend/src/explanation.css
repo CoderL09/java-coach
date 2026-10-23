@@ -1,0 +1,80 @@
+.text-explanation {
+  font-size: 13px;
+  line-height: 1.95;
+  overflow-wrap: anywhere;
+}
+.text-explanation p {
+  white-space: pre-wrap;
+  margin: 10px 0;
+  color: inherit;
+}
+.text-explanation h3 {
+  margin: 23px 0 12px;
+  font-size: 16px;
+  color: var(--ink);
+}
+.text-explanation h3:first-child {
+  margin-top: 0;
+}
+.text-explanation strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+.text-explanation :not(pre) > code {
+  background: var(--bg);
+  color: var(--cyan);
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-size: 0.94em;
+}
+.text-explanation pre {
+  padding: 16px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  white-space: pre-wrap;
+}
+.text-explanation blockquote {
+  margin: 16px 0;
+  border-left: 2px solid var(--amber);
+  padding: 4px 16px;
+  color: var(--muted);
+}
+.text-explanation ul {
+  padding-left: 22px;
+  margin: 14px 0;
+}
+.text-explanation li {
+  margin: 6px 0;
+}
+.explanation-table {
+  overflow-x: auto;
+  margin: 18px 0;
+}
+.explanation-table table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 290px;
+  font-size: 12px;
+}
+.explanation-table th,
+.explanation-table td {
+  border: 1px solid var(--line);
+  padding: 9px 12px;
+  text-align: left;
+}
+.explanation-table th {
+  background: var(--bg);
+  font-weight: 550;
+}
+.coach-turns {
+  position: relative;
+}
+.coach-turns.expanded {
+  max-height: none;
+}
+.expand-explanation {
+  margin: 0 0 16px;
+  font-size: 12px;
+  color: var(--cyan);
+}
